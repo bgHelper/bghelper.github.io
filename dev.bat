@@ -1,1 +1,1 @@
-quasar d -m pwa
+quasar d

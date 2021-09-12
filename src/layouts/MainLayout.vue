@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          {{ name }}
         </q-toolbar-title>
         <q-icon name="fas fa-alicorn" />
 
@@ -95,14 +95,24 @@ const linksData = [
   }
 ];
 
-export default {
+export default {  meta : {
+  // sets document title
+  title: 'Index Pag2e',
+  // optional; sets final title as "Index Page - My Website", useful for multiple level meta
+  titleTemplate: title => `${title} - My Website`
+  },
   name: 'MainLayout',
   components: { EssentialLink },
   data () {
     return {
+      name : "关于",
       leftDrawerOpen: false,
       essentialLinks: linksData
     }
+  },
+  meta: {
+    // 设置文件标题
+    title: '首页3'
   }
 }
 </script>

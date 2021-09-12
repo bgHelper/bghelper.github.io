@@ -80,8 +80,21 @@ module.exports = function (/* ctx */) {
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       iconSet: 'material-icons', // Quasar icon set
-      lang: 'en-us', // Quasar language pack
-      config: {},
+      lang: 'zh-hans', // Quasar language pack
+      config: {
+        brand: {
+          primary: '#e83633',
+          secondary: '#26A69A',
+          accent: '#9C27B0',
+  
+          dark: '#1d1d1d',
+  
+          positive: '#21BA45',
+          negative: '#C10015',
+          info: '#31CCEC',
+          warning: '#F2C037'
+        }
+      },
 
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
@@ -96,7 +109,9 @@ module.exports = function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Meta'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
@@ -113,9 +128,9 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
-        description: `A Quasar Framework app`,
+        name: `红鹤桌游`,
+        short_name: `红鹤桌游`,
+        description: `红鹤桌游`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

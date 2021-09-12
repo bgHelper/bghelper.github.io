@@ -10,6 +10,9 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'Index',
+  meta : {
+    title: '找游戏',
+  }
 }
 </script>
