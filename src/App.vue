@@ -6,6 +6,9 @@
 
 <script>
 export default {
+  meta : {
+    title: '红鹤桌游',
+  },
   name: 'App'
 }
 </script>

@@ -1,18 +1,22 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
-  </q-page>
+  <MainLayout v-bind:hasRight="true">
+    <q-page class="flex flex-center">
+      右侧列表测试
+    </q-page>
+  </MainLayout>
+
 </template>
 
 <script>
+import MainLayout from 'layouts/MainLayout.vue'
+
 export default {
+  components : {
+    MainLayout
+  },
   name: 'Index',
   meta : {
-    title: '找游戏',
+    title: '游戏列表',
   }
 }
 </script>

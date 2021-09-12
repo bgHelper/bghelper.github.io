@@ -1,118 +1,85 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="hHh lpr lFr">
+    <q-header class="bg-primary text-white">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
-
+        <q-btn class="lt-md" dense flat round icon="menu" @click="left = !left" /> 
         <q-toolbar-title>
-          {{ name }}
+          <slot name="title">红鹤桌游</slot>
         </q-toolbar-title>
-        <q-icon name="fas fa-alicorn" />
-
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn v-if="hasRight" dense flat round icon="more_horiz" @click="right = !right" />
       </q-toolbar>
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
+    <q-drawer show-if-above v-model="left" side="left" content-class="bg-grey-1"
+        :mini="miniState"
+        mini-to-overlay
+        @mouseover="miniState = false"
+        @mouseout="miniState = true"
     >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
+      <q-list padding>
+        <PageLink
+          v-for="link in pagesData"
           :key="link.title"
           v-bind="link"
         />
       </q-list>
     </q-drawer>
+    
+    <q-drawer v-if="hasRight" show-if-above v-model="right" side="right" content-class="bg-grey-1">
+      <slot name="rightList">测试错误</slot>
+    </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <slot name="default">红鹤桌游</slot>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
+import PageLink from 'components/PageLink.vue'
 
-const linksData = [
+const pagesData = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'fas fa-dog',
-    link: 'https://quasar.dev'
+    title: '列表',
+    icon: 'casino',    
+    link: '/'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: '大厅',
+    icon: 'table_restaurant',
+    link: '/Hall'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: '账户',
+    icon: 'person',
+    link: '/Account'
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: '设定',
+    icon: 'settings',
+    link: '/Setting'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: '关于',
+    icon: 'info',
+    link: '/About'
   }
 ];
 
-export default {  meta : {
-  // sets document title
-  title: 'Index Pag2e',
-  // optional; sets final title as "Index Page - My Website", useful for multiple level meta
-  titleTemplate: title => `${title} - My Website`
-  },
-  name: 'MainLayout',
-  components: { EssentialLink },
-  data () {
-    return {
-      name : "关于",
-      leftDrawerOpen: false,
-      essentialLinks: linksData
+export default {
+  props: {
+    hasRight: {
+      type: Boolean,
+      default: false
     }
   },
-  meta: {
-    // 设置文件标题
-    title: '首页3'
+  components: { PageLink },
+  data () {
+    return {
+      miniState: true,
+      left: false,
+      right: false,
+      pagesData
+    }
   }
 }
 </script>

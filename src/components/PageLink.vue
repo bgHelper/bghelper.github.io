@@ -1,7 +1,7 @@
 <template>
   <q-item
     :to="link"
-    class="text-primary"
+    :class = "showColor"
   >
     <q-item-section
       v-if="icon"
@@ -33,6 +33,14 @@ export default {
     icon: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    showColor() {
+      if (this.$route.path == this.link) {
+        return "bg-primary text-white"
+      }
+      return "text-primary"
     }
   }
 }
