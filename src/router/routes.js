@@ -5,6 +5,14 @@ const routes = [
     component: () => import('pages/Index.vue')
   },
   {
+    path: '/List',
+    component: () => import('pages/List.vue')
+  },
+  {
+    path: '/Hall',
+    component: () => import('pages/Hall.vue')
+  },
+  {
     path: '/About',
     component: () => import('pages/About.vue')
   },

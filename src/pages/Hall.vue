@@ -1,25 +1,30 @@
 <template>
-  <MainLayout :hiddenRight="true">
+  <MainLayout>
     <template v-slot:title>
-      关于
+      {{title}}
     </template>
-
-    <q-page class="flex flex-center">
-      本页面测试用
+    <q-page class="flex flex-center">      
     </q-page>
   </MainLayout>
+
 </template>
 
 <script>
 import MainLayout from 'layouts/MainLayout.vue'
+const title = "大厅"
 
 export default {
-  name: 'About',
   components : {
     MainLayout
   },
+  name: 'Hall',
   meta : {
-    title: '关于',
+    title,
+  },
+  data () {
+    return {
+      title
+    }
   }
 }
 </script>
