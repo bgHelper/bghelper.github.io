@@ -1,34 +1,58 @@
 <template>
-  <q-item>
-    <img class="col-2" :src="imgUrl">
-    {{id}}
-    {{zh}}
-    <slot />
-  </q-item>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 q-pa-xs">
+  <q-card flat bordered>
+    <q-img :src="imgUrl" :ratio="4/3">
+      <div class="absolute-bottom text-h5">
+        {{item.zh}} <span class="text-caption">({{item.year}})</span>
+        <div class="text-caption">
+          <q-icon name="extension"/>{{dispNum(item.weight)}}
+          <q-icon name="people"/>{{item.minplayers}}<span v-if="item.minplayers != item.maxplayers">-{{item.maxplayers}}</span>
+          <q-icon name="schedule"/>{{dispTime(item.minplaytime)}}<span v-if="item.minplaytime != item.maxplaytime">-{{dispTime(item.maxplaytime)}}</span>
+        </div>
+      </div>
+      <div class="absolute-top-left">
+        {{dispNum(item.rates)}}
+      </div>
+    </q-img>      
+  </q-card>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'GameCard',
   props: {
-    id: {
-      type: Number,
+    item: {
+      type: Object,
       required: true
     },
-    zh: {
-      type: String,
+    dispData: {
+      type: Object,
       required: true
-    },
-  },
-  data() {
-    return {
-      publicPath: process.env.BASE_URL
     }
+  },
+  methods: {
+    dispNum(num) {
+      return (Math.round(num * 10) / 10).toFixed(1)
+    },
+    dispTime(t) {
+      let h = t / 60
+      let m = t % 60
+      let output = ""
+      if (h != 0) {
+        output = h + "h"
+      }
+      if (m != 0) {
+        output = m + "m"
+      }
+      return output
+    }
+
   },
   computed: {
     imgUrl : function () {
-      return "/img/" + this.id + ".jpg"
-    }
+      return "/img/" + this.item.id + ".jpg"
+    },
   }
 }
 </script>

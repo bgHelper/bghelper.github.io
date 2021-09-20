@@ -1,5 +1,5 @@
 <template>
-  <MainLayout :hiddenLeft="true" :hiddenRight="true">
+  <MainLayout hiddenLeft="true" hiddenRight="true">
     <template v-slot:title>
       {{title}} <span class= "text-caption"> {{version}} </span>
     </template>

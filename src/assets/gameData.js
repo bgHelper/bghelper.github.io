@@ -1,6 +1,6 @@
-{
-    "list": {
-        "289230": {
+const data = {
+    "list": [
+        {
             "description": "",
             "en": "Chess of Qin Style",
             "zh": "秦棋攻略",
@@ -22,10 +22,9 @@
             "rates": 8.08571,
             "weight": 3.0,
             "ranks": {},
-            "id": "289230",
-            "img": "https://cf.geekdo-images.com/vYuIfpnbFj4cYI8qeU-yNQ__original/img/oCZgryVRIlYgijnlwT1zyuvD-qQ=/0x0/filters:format(jpeg)/pic4956703.jpg"
+            "id": 289230
         },
-        "239464": {
+        {
             "description": "",
             "en": "Palm Island",
             "zh": "棕榈岛",
@@ -59,10 +58,9 @@
                 "1": 780,
                 "5499": 179
             },
-            "id": "239464",
-            "img": "https://cf.geekdo-images.com/CPJhhXGPCPIIpsTh-p3UQQ__original/img/o0OXnGNtsBkYd4lupJxcZPpNJgU=/0x0/filters:format(png)/pic3995767.png"
+            "id": 239464
         },
-        "822": {
+        {
             "description": "",
             "en": "Carcassonne",
             "year": 2000,
@@ -101,11 +99,9 @@
                 "1": 182,
                 "5499": 37
             },
-            "id": "822",
-            "img": "https://cf.geekdo-images.com/Z3upN53-fsVPUDimN9SpOA__original/img/9LEvU4EbbBrJB36YgWQXeXQYwjo=/0x0/filters:format(jpeg)/pic2337577.jpg"
+            "id": 822
         },
-        "2266": {
-            "img": "https://cf.geekdo-images.com/fuAt2BOjJwZshXmNatLzCg__original/img/JMkWKg1jUYEBgdoDNi0sDvdcYTU=/0x0/filters:format(jpeg)/pic1783771.jpg",
+        {
             "description": "",
             "en": "Gobblet",
             "zh": "棋迹连连",
@@ -135,10 +131,10 @@
             "ranks": {
                 "1": 2354,
                 "4666": 121
-            }
+            },
+            "id": 2266
         },
-        "251658": {
-            "img": "https://cf.geekdo-images.com/aZ3I9B_aEywK4O_qP_Hz9w__original/img/70LwdlP8ezNxe00B48mSmzFfStU=/0x0/filters:format(png)/pic4654146.png",
+        {
             "description": "",
             "en": "Sprawlopolis",
             "zh": "无限都市",
@@ -176,10 +172,10 @@
                 "1": 405,
                 "5497": 264,
                 "5499": 68
-            }
+            },
+            "id": 251658
         },
-        "245487": {
-            "img": "https://cf.geekdo-images.com/tAlkLzFCj-OusgaxQo7SxQ__original/img/QEz5rtHvpnZ_uGaBipjknwQ3gKI=/0x0/filters:format(png)/pic5159434.png",
+        {
             "description": "",
             "en": "Orchard: A 9 card solitaire game",
             "zh": "果园",
@@ -213,10 +209,10 @@
             "ranks": {
                 "1": 1105,
                 "4666": 33
-            }
+            },
+            "id": 245487
         },
-        "265736": {
-            "img": "https://cf.geekdo-images.com/aE1EoOzr530gQin8bj8QDA__original/img/-GDAsvmQ3wkuHaZ8h9G5Gk_nvVA=/0x0/filters:format(jpeg)/pic4460401.jpg",
+        {
             "description": "",
             "en": "Tiny Towns",
             "zh": "小小城镇",
@@ -254,10 +250,10 @@
             "ranks": {
                 "1": 326,
                 "5499": 61
-            }
+            },
+            "id": 265736
         },
-        "245654": {
-            "img": "https://cf.geekdo-images.com/x3hjEgkxZE9M96o6wgj6Tw__original/img/aLU9rLTBaZhBK_U6YMUY8mmJnrM=/0x0/filters:format(png)/pic4097632.png",
+        {
             "description": "",
             "en": "Railroad Ink: Deep Blue Edition",
             "zh": "阡陌交通",
@@ -294,9 +290,10 @@
             "ranks": {
                 "1": 463,
                 "5499": 91
-            }
+            },
+            "id": 245654
         }
-    },
+    ],
     "family": {
         "61979": {
             "en": "Players: Two Player Only Games",
@@ -627,3 +624,5 @@
     },
     "update": "2021.09.20"
 }
+
+export default data

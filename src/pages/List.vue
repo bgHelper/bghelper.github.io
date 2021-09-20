@@ -8,13 +8,15 @@
         <q-input v-model="filter.name" label="名称筛选" />
         <q-input v-model="filter.players.min" label="最小人数" />
         <q-input v-model="filter.players.max" label="最大人数" />
+        <q-input borderless v-model="gameData.update" label="数据更新时间" readonly/>
       </div>
     </template>
-    <q-page class="flex flex-center">
+    <q-page class="flex flex-center row items-start justify-evenly content-start">
       <GameCard
         v-for="item in showItems(filter)"
-        :key = "item.id"
-        v-bind="item"
+        :key="item.id"
+        :item="item"
+        :dispData="gameData"
       >
       </GameCard>
     </q-page>
@@ -25,7 +27,7 @@
 <script>
 import MainLayout from 'layouts/MainLayout.vue'
 import GameCard from 'components/GameCard.vue'
-import gameData from './gameData'
+import gameData from '../assets/gameData'
 const title = "列表"
 
 export default {

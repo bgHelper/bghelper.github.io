@@ -20,7 +20,7 @@ def putInClass(item, cat, link):
     item.append(id)
 
 url = "https://www.boardgamegeek.com/xmlapi2/thing?stats=1&id="
-idList = (289230,239464,822)
+idList = (289230,239464,822,2266,251658,245487,265736,245654)
 
 for id in idList:
     url += "%d," % id
