@@ -2,7 +2,6 @@
 
 import requests
 from xml.etree import ElementTree
-import time
 
 def isChinse(s):
     for c in s:
@@ -86,5 +85,3 @@ def update(dataBase, gameId):
         elif dataBase["ranks"][rid]["en"] != rankname:
             print ("Error %d %d %s %s", rid, rid, dataBase["ranks"][rid]["en"], rankname)
         dataItem["ranks"][rid] = int(rank.attrib['value'])
-
-    dataBase["update"] = time.strftime("%Y.%m.%d", time.localtime())

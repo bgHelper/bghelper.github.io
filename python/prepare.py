@@ -37,6 +37,7 @@ def PrepareList():
     output = {}
     output["list"] = toList(dataBase["list"])
     output["mechanic"] = toListN(dataBase["mechanic"])
+    output["update"] = dataBase["update"]
 
     listFile = open("../src/assets/gameList.js", "w", encoding="utf8")
     listFile.write("const list = ")

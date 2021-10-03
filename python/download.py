@@ -2,6 +2,7 @@
 
 import update
 import json
+import time
 
 dataBaseName = "dataBase.json"
 
@@ -24,5 +25,7 @@ idList = (289230,239464,822,2266,251658,245487,265736,245654)
 
 for id in idList:
     update.update(dataBase, id)
+
+dataBase["update"] = time.strftime("%Y.%m.%d", time.localtime())
 
 json.dump(dataBase, open(dataBaseName, "w", encoding="utf8"), indent=4, ensure_ascii=False)
