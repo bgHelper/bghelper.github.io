@@ -6,31 +6,40 @@
     <template v-slot:rightList>
       <div class="q-pa-md">
         <q-input v-model="filter.name" label="名称筛选" />
-        <q-input v-model="filter.players.min" label="最小人数" />
-        <q-input v-model="filter.players.max" label="最大人数" />
+        <q-input v-model.number="filter.players.min" min="1" :max="filter.players.max" type="number" label="最小人数" />
+        <q-input v-model.number="filter.players.max" :min = "filter.players.min" max="10" type="number" label="最大人数" />
         <q-select
           multiple
           v-model="filter.mechanic.include"
           label="包含机制"
           :options="gameData.mechanic"
-          clearable
+          use-chips
         />
         <q-select
           multiple
           v-model="filter.mechanic.exclude"
           label="排除机制"
           :options="gameData.mechanic"
-          clearable
+          use-chips
+        />
+        <q-select
+          v-model="filter.sort.key"
+          label="排序"
+          :options="sortList"
+        />
+        <q-toggle
+          v-model="filter.sort.reverse"
+          :label="filter.sort.reverse ? '递减' : '递增'"
         />
         <q-input borderless v-model="gameData.update" label="数据更新时间" readonly/>
       </div>
     </template>
-    <q-page v-if="showItems(filter).length == 0"  class="text-h5 flex flex-center row items-start justify-evenly content-center">
+    <q-page v-if="showList.length == 0"  class="text-h5 flex flex-center row items-start justify-evenly content-center">
       无符合条件的游戏
     </q-page>
     <q-page v-else class="flex flex-center row items-start justify-evenly content-start">
       <GameCard
-        v-for="item in showItems(filter)"
+        v-for="item in showList"
         :key="item.id"
         :item="item"
         :dispData="gameData"
@@ -47,38 +56,54 @@ import GameCard from 'components/GameCard.vue'
 import gameData from '../assets/gameList'
 const title = "列表"
 
+const sortList = [
+  {
+    "value": "year",
+    "label": "年份"
+  },
+  {
+    "value": "rates",
+    "label": "评分"
+  },
+  {
+    "value": "weight",
+    "label": "重度"
+  },
+]
+
 export default {
   components : {
     MainLayout,
     GameCard
   },
   name: 'List',
-  meta : {
-    title,
+  meta: {
+    title ,
   },
-  methods : {
-    showItems(filter) {
+  computed : {
+    showList : function()  {
+      let listFilter = this.filter
       return this.gameData.list.filter(function(item) {
-        if (!item.en.toLowerCase().includes(filter.name.toLowerCase()) && !item.zh.includes(filter.name)) {
+        if (!item.en.toLowerCase().includes(listFilter.name.toLowerCase()) && !item.zh.includes(listFilter.name)) {
           return false
         }
-        if (item.maxplayers < filter.players.min) {
+        if (item.maxplayers < listFilter.players.min) {
           return false
         }
-        if (item.minplayers > filter.players.max) {
+        if (item.minplayers > listFilter.players.max) {
           return false
         }
-        if (filter.mechanic.include) {
-          for (var idx = 0; idx < filter.mechanic.include.length; idx++) {
-            var id = filter.mechanic.include[idx].value
+        if (listFilter.mechanic.include) {
+          for (var idx = 0; idx < listFilter.mechanic.include.length; idx++) {
+            var id = listFilter.mechanic.include[idx].value
             if (!item.mechanic.includes(id)) {
               return false
             }
           }
         }
-        if (filter.mechanic.exclude) {
-          for (var idx = 0; idx < filter.mechanic.exclude.length; idx++) {
-            var id = filter.mechanic.exclude[idx].value
+        if (listFilter.mechanic.exclude) {
+          for (var idx = 0; idx < listFilter.mechanic.exclude.length; idx++) {
+            var id = listFilter.mechanic.exclude[idx].value
             if (item.mechanic.includes(id)) {
               return false
             }
@@ -86,24 +111,36 @@ export default {
         }
         return true
       }).sort(function(a, b) {
-        return a.id - b.id
+        let value = listFilter.sort.key.value
+        let diff = a[value] - b[value]
+        if (diff == 0) {
+          diff = a.id - b.id
+        }
+        if (listFilter.sort.reverse) {
+          diff = -diff
+        }
+        return diff
       })
-    }
+    },
   },
   data () {
     return {
       title,
       gameData,
-      sortKey : "ranks",      
+      sortList,
       filter : {
         name : "",
         players: {
           min: 1,
-          max: 6
+          max: 10
         },
         mechanic : {
           include : [],
           exclude : [],
+        },
+        sort : {
+          key : sortList[0],
+          reverse : false
         }
       }
     }
