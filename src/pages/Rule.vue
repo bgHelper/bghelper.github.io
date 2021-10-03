@@ -4,38 +4,10 @@
       {{title}}
     </template>
     <template v-slot:rightList>
-      <div class="q-pa-md">
-        <q-input v-model="filter.name" label="名称筛选" />
-        <q-input v-model="filter.players.min" label="最小人数" />
-        <q-input v-model="filter.players.max" label="最大人数" />
-        <q-select
-          multiple
-          v-model="filter.mechanic.include"
-          label="包含机制"
-          :options="gameData.mechanic"
-          clearable
-        />
-        <q-select
-          multiple
-          v-model="filter.mechanic.exclude"
-          label="排除机制"
-          :options="gameData.mechanic"
-          clearable
-        />
-        <q-input borderless v-model="gameData.update" label="数据更新时间" readonly/>
-      </div>
+      规则列表
     </template>
-    <q-page v-if="showItems(filter).length == 0"  class="text-h5 flex flex-center row items-start justify-evenly content-center">
-      无符合条件的游戏
-    </q-page>
-    <q-page v-else class="flex flex-center row items-start justify-evenly content-start">
-      <GameCard
-        v-for="item in showItems(filter)"
-        :key="item.id"
-        :item="item"
-        :dispData="gameData"
-      >
-      </GameCard>
+    <q-page class="flex flex-center row items-start justify-evenly content-center">
+      规则详情
     </q-page>
   </MainLayout>
 
@@ -43,18 +15,18 @@
 
 <script>
 import MainLayout from 'layouts/MainLayout.vue'
-import GameCard from 'components/GameCard.vue'
 import gameData from '../assets/gameList'
 const title = "列表"
 
 export default {
   components : {
     MainLayout,
-    GameCard
   },
   name: 'List',
-  meta : {
-    title,
+  meta() {
+    return {
+      title : this.$route.params.gid,
+    }    
   },
   methods : {
     showItems(filter) {
@@ -91,8 +63,9 @@ export default {
     }
   },
   data () {
+    //$route.params
     return {
-      title,
+      title : this.$route.params.gid,
       gameData,
       sortKey : "ranks",      
       filter : {

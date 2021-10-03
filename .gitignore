@@ -32,6 +32,4 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-/batch/*.xml
-/batch/gameData.js
-/batch/img/*
+__pycache__

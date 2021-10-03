@@ -1,12 +1,12 @@
 <template>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 q-pa-xs">
+  <router-link :to="toUrl('')" class="col-xs-12 col-sm-6 col-md-4 q-pa-xs">
   <q-card flat bordered>
-    <q-img :src="imgUrl" :ratio="4/3">
-      <div class="absolute-bottom text-h5">
+    <q-img :src="imgUrl" :ratio="2">
+      <div class="absolute-bottom text-subtitle1">
         {{item.zh}} <span class="text-caption">({{item.year}})</span>
         <div class="text-caption">
           <q-icon name="extension"/>{{dispNum(item.weight)}}
-          <q-icon name="people"/>{{item.minplayers}}<span v-if="item.minplayers != item.maxplayers">-{{item.maxplayers}}</span>
+          <q-icon name="people"/>{{item.minplayers}}<span v-if="item.minplayers != item.maxplayers">-{{item.maxplayers}}</span>{{" "}}
           <q-icon name="schedule"/>{{dispTime(item.minplaytime)}}<span v-if="item.minplaytime != item.maxplaytime">-{{dispTime(item.maxplaytime)}}</span>
         </div>
       </div>
@@ -15,7 +15,7 @@
       </div>
     </q-img>      
   </q-card>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -46,8 +46,10 @@ export default {
         output = m + "m"
       }
       return output
-    }
-
+    },
+    toUrl : function (next) {
+      return "/" + this.item.id + "/" + next
+    },
   },
   computed: {
     imgUrl : function () {

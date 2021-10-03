@@ -1,6 +1,6 @@
-const data = {
-    "list": [
-        {
+{
+    "list": {
+        "289230": {
             "description": "",
             "en": "Chess of Qin Style",
             "zh": "秦棋攻略",
@@ -22,9 +22,11 @@ const data = {
             "rates": 8.08571,
             "weight": 3.0,
             "ranks": {},
-            "id": 289230
+            "id": "289230",
+            "img": "https://cf.geekdo-images.com/vYuIfpnbFj4cYI8qeU-yNQ__original/img/oCZgryVRIlYgijnlwT1zyuvD-qQ=/0x0/filters:format(jpeg)/pic4956703.jpg",
+            "pages": {}
         },
-        {
+        "239464": {
             "description": "",
             "en": "Palm Island",
             "zh": "棕榈岛",
@@ -52,15 +54,17 @@ const data = {
                 "2020",
                 "2819"
             ],
-            "rates": 7.21666,
-            "weight": 1.7217,
+            "rates": 7.21461,
+            "weight": 1.7241,
             "ranks": {
-                "1": 780,
-                "5499": 179
+                "1": 783,
+                "5499": 181
             },
-            "id": 239464
+            "id": "239464",
+            "img": "https://cf.geekdo-images.com/CPJhhXGPCPIIpsTh-p3UQQ__original/img/o0OXnGNtsBkYd4lupJxcZPpNJgU=/0x0/filters:format(png)/pic3995767.png",
+            "pages": {}
         },
-        {
+        "822": {
             "description": "",
             "en": "Carcassonne",
             "year": 2000,
@@ -92,16 +96,19 @@ const data = {
                 "2959",
                 "2002"
             ],
-            "rates": 7.41902,
-            "weight": 1.9078,
+            "rates": 7.41893,
+            "weight": 1.9079,
             "zh": "卡卡城",
             "ranks": {
-                "1": 182,
+                "1": 184,
                 "5499": 37
             },
-            "id": 822
+            "id": "822",
+            "img": "https://cf.geekdo-images.com/Z3upN53-fsVPUDimN9SpOA__original/img/9LEvU4EbbBrJB36YgWQXeXQYwjo=/0x0/filters:format(jpeg)/pic2337577.jpg",
+            "pages": {}
         },
-        {
+        "2266": {
+            "img": "https://cf.geekdo-images.com/fuAt2BOjJwZshXmNatLzCg__original/img/JMkWKg1jUYEBgdoDNi0sDvdcYTU=/0x0/filters:format(jpeg)/pic1783771.jpg",
             "description": "",
             "en": "Gobblet",
             "zh": "棋迹连连",
@@ -126,15 +133,16 @@ const data = {
                 "2048",
                 "2060"
             ],
-            "rates": 6.60117,
+            "rates": 6.6001,
             "weight": 1.8487,
             "ranks": {
-                "1": 2354,
-                "4666": 121
+                "1": 2351,
+                "4666": 120
             },
-            "id": 2266
+            "pages": {}
         },
-        {
+        "251658": {
+            "img": "https://cf.geekdo-images.com/aZ3I9B_aEywK4O_qP_Hz9w__original/img/70LwdlP8ezNxe00B48mSmzFfStU=/0x0/filters:format(png)/pic4654146.png",
             "description": "",
             "en": "Sprawlopolis",
             "zh": "无限都市",
@@ -156,7 +164,8 @@ const data = {
                 "65208",
                 "5666",
                 "61134",
-                "27795"
+                "27795",
+                "68322"
             ],
             "mechanic": [
                 "2041",
@@ -166,16 +175,17 @@ const data = {
                 "2819",
                 "2002"
             ],
-            "rates": 7.46855,
-            "weight": 1.8356,
+            "rates": 7.46867,
+            "weight": 1.8467,
             "ranks": {
-                "1": 405,
-                "5497": 264,
-                "5499": 68
+                "1": 400,
+                "5497": 259,
+                "5499": 67
             },
-            "id": 251658
+            "pages": {}
         },
-        {
+        "245487": {
+            "img": "https://cf.geekdo-images.com/tAlkLzFCj-OusgaxQo7SxQ__original/img/QEz5rtHvpnZ_uGaBipjknwQ3gKI=/0x0/filters:format(png)/pic5159434.png",
             "description": "",
             "en": "Orchard: A 9 card solitaire game",
             "zh": "果园",
@@ -204,15 +214,16 @@ const data = {
                 "2819",
                 "2002"
             ],
-            "rates": 7.48367,
+            "rates": 7.48359,
             "weight": 1.1702,
             "ranks": {
-                "1": 1105,
-                "4666": 33
+                "1": 1096,
+                "4666": 32
             },
-            "id": 245487
+            "pages": {}
         },
-        {
+        "265736": {
+            "img": "https://cf.geekdo-images.com/aE1EoOzr530gQin8bj8QDA__original/img/-GDAsvmQ3wkuHaZ8h9G5Gk_nvVA=/0x0/filters:format(jpeg)/pic4460401.jpg",
             "description": "",
             "en": "Tiny Towns",
             "zh": "小小城镇",
@@ -229,6 +240,7 @@ const data = {
             ],
             "family": [
                 "24571",
+                "68769",
                 "5666",
                 "65774"
             ],
@@ -245,18 +257,19 @@ const data = {
                 "2015",
                 "2897"
             ],
-            "rates": 7.33571,
-            "weight": 2.0769,
+            "rates": 7.33447,
+            "weight": 2.0811,
             "ranks": {
-                "1": 326,
-                "5499": 61
+                "1": 325,
+                "5499": 62
             },
-            "id": 265736
+            "pages": {}
         },
-        {
+        "245654": {
+            "img": "https://cf.geekdo-images.com/x3hjEgkxZE9M96o6wgj6Tw__original/img/aLU9rLTBaZhBK_U6YMUY8mmJnrM=/0x0/filters:format(png)/pic4097632.png",
             "description": "",
             "en": "Railroad Ink: Deep Blue Edition",
-            "zh": "阡陌交通",
+            "zh": "千墨交通",
             "year": 2018,
             "minplayers": 1,
             "maxplayers": 6,
@@ -285,15 +298,15 @@ const data = {
                 "2055",
                 "2819"
             ],
-            "rates": 7.25918,
-            "weight": 1.4789,
+            "rates": 7.25631,
+            "weight": 1.4726,
             "ranks": {
-                "1": 463,
-                "5499": 91
+                "1": 464,
+                "5499": 93
             },
-            "id": 245654
+            "pages": {}
         }
-    ],
+    },
     "family": {
         "61979": {
             "en": "Players: Two Player Only Games",
@@ -434,6 +447,10 @@ const data = {
         "41222": {
             "en": "Mechanism: Roll-and-Write",
             "zh": "Mechanism: Roll-and-Write"
+        },
+        "68322": {
+            "en": "Theme: City",
+            "zh": "Theme: City"
         }
     },
     "category": {
@@ -485,123 +502,123 @@ const data = {
     "mechanic": {
         "2046": {
             "en": "Area Movement",
-            "zh": "Area Movement"
+            "zh": "区域移动"
         },
         "2023": {
             "en": "Cooperative Game",
-            "zh": "Cooperative Game"
+            "zh": "合作游戏"
         },
         "2664": {
             "en": "Deck, Bag, and Pool Building",
-            "zh": "Deck, Bag, and Pool Building"
+            "zh": "资源构筑"
         },
         "2040": {
             "en": "Hand Management",
-            "zh": "Hand Management"
+            "zh": "手牌管理"
         },
         "2047": {
             "en": "Memory",
-            "zh": "Memory"
+            "zh": "记忆推理"
         },
         "2020": {
             "en": "Simultaneous Action Selection",
-            "zh": "Simultaneous Action Selection"
+            "zh": "同时行动"
         },
         "2819": {
             "en": "Solo / Solitaire Game",
-            "zh": "Solo / Solitaire Game"
+            "zh": "单人游戏"
         },
         "2080": {
             "en": "Area Majority / Influence",
-            "zh": "Area Majority / Influence"
+            "zh": "区域控制"
         },
         "2959": {
             "en": "Map Addition",
-            "zh": "Map Addition"
+            "zh": "地图扩张"
         },
         "2002": {
             "en": "Tile Placement",
-            "zh": "Tile Placement"
+            "zh": "板块拼接"
         },
         "2048": {
             "en": "Pattern Building",
-            "zh": "Pattern Building"
+            "zh": "模式构造"
         },
         "2060": {
             "en": "Pattern Recognition",
-            "zh": "Pattern Recognition"
+            "zh": "模式识别"
         },
         "2041": {
             "en": "Card Drafting",
-            "zh": "Card Drafting"
+            "zh": "卡牌选取"
         },
         "2984": {
             "en": "Drafting",
-            "zh": "Drafting"
+            "zh": "轮抽"
         },
         "3001": {
             "en": "Layering",
-            "zh": "Layering"
+            "zh": "叠放"
         },
         "2981": {
             "en": "Melding and Splaying",
-            "zh": "Melding and Splaying"
+            "zh": "融合展开"
         },
         "2999": {
             "en": "Bingo",
-            "zh": "Bingo"
+            "zh": "赌博"
         },
         "2875": {
             "en": "End Game Bonuses",
-            "zh": "End Game Bonuses"
+            "zh": "终局奖励"
         },
         "2843": {
             "en": "Follow",
-            "zh": "Follow"
+            "zh": "跟随行动"
         },
         "2978": {
             "en": "Grid Coverage",
-            "zh": "Grid Coverage"
+            "zh": "网格覆盖"
         },
         "2685": {
             "en": "Player Elimination",
-            "zh": "Player Elimination"
+            "zh": "玩家出局"
         },
         "2828": {
             "en": "Turn Order: Progressive",
-            "zh": "Turn Order: Progressive"
+            "zh": "顺位：轮换"
         },
         "2079": {
             "en": "Variable Phase Order",
-            "zh": "Variable Phase Order"
+            "zh": "可变行动流程"
         },
         "2015": {
             "en": "Variable Player Powers",
-            "zh": "Variable Player Powers"
+            "zh": "可变玩家能力"
         },
         "2897": {
             "en": "Variable Set-up",
-            "zh": "Variable Set-up"
+            "zh": "可变初始化"
         },
         "2883": {
             "en": "Connections",
-            "zh": "Connections"
+            "zh": "连接"
         },
         "2072": {
             "en": "Dice Rolling",
-            "zh": "Dice Rolling"
+            "zh": "投骰子"
         },
         "2039": {
             "en": "Line Drawing",
-            "zh": "Line Drawing"
+            "zh": "绘制直线"
         },
         "2081": {
             "en": "Network and Route Building",
-            "zh": "Network and Route Building"
+            "zh": "路径构造"
         },
         "2055": {
             "en": "Paper-and-Pencil",
-            "zh": "Paper-and-Pencil"
+            "zh": "纸笔游戏"
         }
     },
     "ranks": {
@@ -622,7 +639,5 @@ const data = {
             "zh": "Strategy Game Rank"
         }
     },
-    "update": "2021.09.20"
+    "update": "2021.10.02"
 }
-
-export default data

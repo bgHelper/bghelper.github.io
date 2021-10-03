@@ -1,7 +1,6 @@
 # coding=utf-8
 
 import requests
-import json
 from xml.etree import ElementTree
 import time
 
@@ -11,42 +10,29 @@ def isChinse(s):
             return True
     return False
 
+def isTChinse(s):
+    try:
+        s.encode('gb2312')
+        return True
+    except:
+        return False
+
 def putInClass(item, cat, link):
     id = link.attrib['id']
+    value = link.attrib['value']
     if not id in cat:
-        cat[id] = { "en" : link.attrib['value'], "zh" : link.attrib['value']}
-    elif cat[id]["en"] != link.attrib['value']:
-        print ("Error %d %d %s %s", id, id, cat[id]["en"], link.attrib['value'])
-    item.append(id)
+        cat[id] = { "en" : value, "zh" : value}
+    elif cat[id]["en"] != value:
+        print ("Error %d %d %s %s", id, id, cat[id]["en"], value)
+    item.append(id)        
 
-url = "https://www.boardgamegeek.com/xmlapi2/thing?stats=1&id="
-idList = (289230,239464,822,2266,251658,245487,265736,245654)
+def update(dataBase, gameId):
+    url = "https://www.boardgamegeek.com/xmlapi2/thing?stats=1&id=%d" % gameId
+    
+    xml = requests.get(url)
+    tree = ElementTree.fromstring(xml.content)
 
-for id in idList:
-    url += "%d," % id
-
-xml = requests.get(url)
-#print(xml.content)
-tree = ElementTree.fromstring(xml.content)
-
-dataBaseName = "dataBase.json"
-
-readfile = open(dataBaseName, "r", encoding="utf8")
-dataBase = json.load(readfile)
-readfile.close()
-
-if not "list" in dataBase:
-    dataBase["list"] = {}
-if not "family" in dataBase:
-    dataBase["family"] = {}
-if not "category" in dataBase:
-    dataBase["category"] = {}
-if not "mechanic" in dataBase:
-    dataBase["mechanic"] = {}
-if not "ranks" in dataBase:
-    dataBase["ranks"] = {} 
-
-for item in tree.findall("item"):
+    item = tree.find("item")
     id = item.attrib['id']    
     if not id in dataBase["list"]:
         dataBase["list"][id] = {}
@@ -55,15 +41,16 @@ for item in tree.findall("item"):
     if not "description" in dataItem:
         dataItem["description"] = ""
     for name in item.findall("name"):
+        nameStr = name.attrib["value"]
         if name.attrib["type"] == "primary":
-            dataItem["en"] = name.attrib["value"]
-        if isChinse(name.attrib["value"]):
-            try:
-                name.attrib["value"].encode('gb2312')
-                dataItem["zh"] = name.attrib["value"]
-            except:
+            dataItem["en"] = nameStr
+        
+        if isChinse(nameStr):
+            if isTChinse(nameStr):
+                dataItem["zh"] = nameStr
+            else:
                 if not "zh" in dataItem:
-                    dataItem["zh"] = name.attrib["value"]
+                    dataItem["zh"] = nameStr
     if not "zh" in dataItem:
         dataItem["zh"] = dataItem["en"]
     
@@ -76,14 +63,15 @@ for item in tree.findall("item"):
     dataItem["category"] = []
     dataItem["family"] = []
     dataItem["mechanic"] = []
+    if not "pages" in dataItem:
+        dataItem["pages"] = {}
     for link in item.findall("link"):
         if link.attrib["type"] == "boardgamecategory":
             putInClass(dataItem["category"], dataBase["category"], link)
         elif link.attrib["type"] == "boardgamefamily":
             putInClass(dataItem["family"], dataBase["family"], link)
         elif link.attrib["type"] == "boardgamemechanic":
-            putInClass(dataItem
-            ["mechanic"], dataBase["mechanic"], link)
+            putInClass(dataItem["mechanic"], dataBase["mechanic"], link)
     rating = item.find("statistics").find("ratings")
     dataItem["rates"] = float(rating.find("average").attrib["value"])
     dataItem["weight"] = float(rating.find("averageweight").attrib["value"])
@@ -91,13 +79,12 @@ for item in tree.findall("item"):
     for rank in rating.find("ranks").findall("rank"):
         if rank.attrib['value'] == 'Not Ranked':
             continue
-        rid = rank.attrib['id']        
+        rid = rank.attrib['id']
+        rankname = rank.attrib['friendlyname']
         if not rid in dataBase["ranks"]:
-            dataBase["ranks"][rid] = { "en" : rank.attrib['friendlyname'], "zh" : rank.attrib['friendlyname']}
-        elif dataBase["ranks"][rid]["en"] != rank.attrib['friendlyname']:
-            print ("Error %d %d %s %s", rid, rid, dataBase["ranks"][rid]["en"], rank.attrib['friendlyname'])
+            dataBase["ranks"][rid] = { "en" : rankname, "zh" : rankname}
+        elif dataBase["ranks"][rid]["en"] != rankname:
+            print ("Error %d %d %s %s", rid, rid, dataBase["ranks"][rid]["en"], rankname)
         dataItem["ranks"][rid] = int(rank.attrib['value'])
 
-dataBase["update"] = time.strftime("%Y.%m.%d", time.localtime())
-
-json.dump(dataBase, open(dataBaseName, "w", encoding="utf8"), indent=4, ensure_ascii=False)
+    dataBase["update"] = time.strftime("%Y.%m.%d", time.localtime())

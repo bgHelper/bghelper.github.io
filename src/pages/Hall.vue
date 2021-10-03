@@ -3,7 +3,8 @@
     <template v-slot:title>
       {{title}}
     </template>
-    <q-page class="flex flex-center">      
+    <q-page class="flex flex-center">
+      空空如野
     </q-page>
   </MainLayout>
 

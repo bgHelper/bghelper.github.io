@@ -1,7 +1,7 @@
 <template>
   <MainLayout :hiddenRight="true">
     <template v-slot:title>
-      关于
+      {{title}}
     </template>
 
     <q-page class="flex flex-center">
@@ -12,14 +12,20 @@
 
 <script>
 import MainLayout from 'layouts/MainLayout.vue'
+const title = "关于"
 
 export default {
   name: 'About',
   components : {
     MainLayout
   },
+  data() {
+    return {
+      title
+    }
+  },
   meta : {
-    title: '关于',
+    title
   }
 }
 </script>
