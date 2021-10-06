@@ -1,57 +1,43 @@
-import gameData from '../assets/gameList'
-
 const routes = [
   {
     path: '/',
-    name : "Indxe",
+    name : 'Indxe',
     component: () => import('pages/Index.vue')
   },
   {
     path: '/List',
-    name: "List",
+    name: 'List',
     component: () => import('pages/List.vue')
   },
   {
     path: '/Hall',
-    name: "Hall",
+    name: 'Hall',
     component: () => import('pages/Hall.vue')
   },
   {
     path: '/About',
+    name : 'About',
     component: () => import('pages/About.vue')
   },
   {
-    path: '/:gid',
-    component: () => import('pages/Empty.vue'),
-    //beforeEnter: (to, from, next) => {
-    //  // ...
-    //  console.log(to)
-    //  if (to.params.gid == "822") {
-    //    console.log("matched")
-    //    next({name : "404"})
-    //    return
-    //  }
-    //  next()
-    //},
-    children: [
-      { 
-        path: '',
-        redirect : "Rule"
-      },
-      { 
-        path: 'Rule',
-        name: "Rule",        
-        component: () => import('pages/Rule.vue')
-      }
-    ]
+    path: '/Error404',
+    name : 'Error404',
+    component: () => import('pages/Error404.vue')
+  },
+  {
+    path: '/:gid(\\d+)/Rule',
+    name : 'Rule',
+    component: () => import('src/pages/Rule.vue'),
+    meta: () => import('assets/gameList.js')
   },
   // Always leave this as last one,
   // but you can also remove it
   {
     path: '*',
-    name : "404",
-    component: () => import('pages/Error404.vue')
-  }
+    redirect: { 
+      name : 'Error404'
+    }
+  },
 ]
 
 export default routes

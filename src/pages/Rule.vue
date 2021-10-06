@@ -1,85 +1,108 @@
 <template>
-  <MainLayout>
-    <template v-slot:title>
-      {{title}}
+  <MainLayout :title="title">
+    <template #rightList>
+      <q-list>
+        <q-item class="text-h5" v-for="(line, index) in data.content" :key="index" clickable v-ripple @click="play(line)">
+          {{line.title}}
+        </q-item>
+      </q-list>
     </template>
-    <template v-slot:rightList>
-      规则列表
-    </template>
-    <q-page class="flex flex-center row items-start justify-evenly content-center">
-      规则详情
+    
+    <q-page class="flex row items-start justify-evenly content-start">
+      <q-scroll-observer @scroll="scrollHandler" />
+      <q-card v-for="(line, index) in data.content" :key="index" flat @click="play(line)" class="col-12">
+        <q-card-section class="center">
+          <div class="text-h4">
+            {{line.title}}
+          </div>
+          <div class="text-h5"> 
+            {{line.text}}
+          </div>
+        </q-card-section>
+      </q-card>
     </q-page>
+    
   </MainLayout>
-
 </template>
 
 <script>
 import MainLayout from 'layouts/MainLayout.vue'
-import gameData from '../assets/gameList'
-const title = "列表"
 
+function importFile(params) {
+  return import("../assets/"+params.gid+"/Rule")
+}
+
+let gameData = {
+  zh : "秦棋攻略",
+  content : [
+    {
+      title : "简介",
+      text : "《秦棋攻略》还原秦王沙盘推演战局，是模拟战国战场的抽象棋。玩家使用20枚棋子，在8x8棋盘上排兵布阵。与传统象棋不同的是:获胜条件为达阵而非擒王。"
+    },    
+    {
+      title : "配件",
+      text : "两色棋子共四十枚，棋盘一个，提示屏风两张，沙漏两个，规则书一本，收纳袋两个。"
+    }
+  ]
+}
 export default {
   components : {
     MainLayout,
   },
-  name: 'List',
-  meta() {
-    return {
-      title : this.$route.params.gid,
-    }    
-  },
-  methods : {
-    showItems(filter) {
-      return this.gameData.list.filter(function(item) {
-        if (!item.en.toLowerCase().includes(filter.name.toLowerCase()) && !item.zh.includes(filter.name)) {
-          return false
-        }
-        if (item.maxplayers < filter.players.min) {
-          return false
-        }
-        if (item.minplayers > filter.players.max) {
-          return false
-        }
-        if (filter.mechanic.include) {
-          for (var idx = 0; idx < filter.mechanic.include.length; idx++) {
-            var id = filter.mechanic.include[idx].value
-            if (!item.mechanic.includes(id)) {
-              return false
-            }
-          }
-        }
-        if (filter.mechanic.exclude) {
-          for (var idx = 0; idx < filter.mechanic.exclude.length; idx++) {
-            var id = filter.mechanic.exclude[idx].value
-            if (item.mechanic.includes(id)) {
-              return false
-            }
-          }
-        }
-        return true
-      }).sort(function(a, b) {
-        return a.id - b.id
-      })
-    }
-  },
+  name: 'Rule',  
   data () {
-    //$route.params
     return {
-      title : this.$route.params.gid,
-      gameData,
-      sortKey : "ranks",      
-      filter : {
-        name : "",
-        players: {
-          min: 1,
-          max: 6
-        },
-        mechanic : {
-          include : [],
-          exclude : [],
-        }
-      }
+      title : "未配置",
+      data: gameData,
     }
-  }
+  },
+  beforeRouteEnter(to, from, next) {
+    console.log(to.meta())
+    importFile(to.params).then(
+      module => {
+        next(vm => vm.setData(module.default))
+      }
+    ).catch(
+      err => {
+        //next({name: "Error404"})
+        next(vm => vm.setData(gameData))
+      }
+    )
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log(to.meta())
+    
+    importFile(to.params).then(
+      module => {
+        this.setData(module.default)
+        next()
+      }
+    ).catch(
+      err => {
+        this.setData(gameData)
+        //next({name: "Error404"})
+        next()
+      }
+    )
+  },
+  methods: {
+    setData(data) {
+      this.data = data
+      let title = "规则：" + this.data.zh;
+      this.title = title
+      document.title = title
+    },
+    play(line) {
+      //console.log(Obj.srcElement.innerText)
+      console.log(line)
+      let url = "https://tts.baidu.com/text2audio?cuid=baike&lan=ZH&ie=utf-8&ctp=1&pdt=301&vol=9&rate=32&per=1&tex=" 
+      + line.title + "：" + line.text
+      new Audio(url).play()
+      //console.log("aaa")
+    },
+    scrollHandler(pos) {
+      console.log(pos)
+    }
+  }  
 }
 </script>

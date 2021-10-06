@@ -1,8 +1,5 @@
 <template>
-  <MainLayout>
-    <template v-slot:title>
-      {{title}}
-    </template>
+  <MainLayout :title="title">
     <q-page class="flex flex-center">
       空空如野
     </q-page>

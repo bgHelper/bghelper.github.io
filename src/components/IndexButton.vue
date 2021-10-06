@@ -1,5 +1,5 @@
 <template>
-  <q-btn class="col-5 text-h5" :icon="icon" :label="title" :to="link" stack :color="color"/>
+  <q-btn class="col-xs-11 col-sm-5 col-md-3 text-h5" :icon="icon" :label="title" :to="link" stack :color="color" />
 </template>
 
 <script>

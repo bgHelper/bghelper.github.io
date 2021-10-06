@@ -1,0 +1,27 @@
+[
+    {
+        "path": "/",
+        "name" : "Index",
+        "component": "pages/Index.vue" 
+    },
+    {
+        "path": "/List",
+        "name": "List",
+        "component": "pages/List.vue" 
+    },
+    {
+        "path": "/Hall",
+        "name": "Hall",
+        "component": "pages/Hall.vue" 
+    },
+    {
+        "path": "/About",
+        "name" : "About",
+        "component": "pages/About.vue" 
+    },
+    {
+        "path": "*",
+        "name" : "Error404",
+        "component": "pages/Error404.vue" 
+    }
+]

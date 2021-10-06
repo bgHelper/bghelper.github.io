@@ -1,9 +1,6 @@
 <template>
-  <MainLayout>
-    <template v-slot:title>
-      {{title}}
-    </template>
-    <template v-slot:rightList>
+  <MainLayout :title="title">
+    <template #rightList>
       <div class="q-pa-md">
         <q-input v-model="filter.name" label="名称筛选" />
         <q-input v-model.number="filter.players.min" min="1" :max="filter.players.max" type="number" label="最小人数" />
@@ -27,24 +24,24 @@
           label="排序"
           :options="sortList"
         />
-        <q-toggle
+        <q-toggle          
           v-model="filter.sort.reverse"
           :label="filter.sort.reverse ? '递减' : '递增'"
         />
+        
         <q-input borderless v-model="gameData.update" label="数据更新时间" readonly/>
       </div>
     </template>
-    <q-page v-if="showList.length == 0"  class="text-h5 flex flex-center row items-start justify-evenly content-center">
+    <q-page v-if="showList.length == 0" class="text-h5 flex flex-center row items-start justify-evenly content-center">
       无符合条件的游戏
     </q-page>
-    <q-page v-else class="flex flex-center row items-start justify-evenly content-start">
+    <q-page v-else class="flex row items-start justify-start content-start">
       <GameCard
         v-for="item in showList"
         :key="item.id"
         :item="item"
-        :dispData="gameData"
-      >
-      </GameCard>
+        v-model="selectId"
+      />
     </q-page>
   </MainLayout>
 
@@ -95,7 +92,7 @@ export default {
         }
         if (listFilter.mechanic.include) {
           for (var idx = 0; idx < listFilter.mechanic.include.length; idx++) {
-            var id = listFilter.mechanic.include[idx].value
+            var id = listFilter.mechanic.include[idx]
             if (!item.mechanic.includes(id)) {
               return false
             }
@@ -103,7 +100,7 @@ export default {
         }
         if (listFilter.mechanic.exclude) {
           for (var idx = 0; idx < listFilter.mechanic.exclude.length; idx++) {
-            var id = listFilter.mechanic.exclude[idx].value
+            var id = listFilter.mechanic.exclude[idx]
             if (item.mechanic.includes(id)) {
               return false
             }
@@ -128,6 +125,7 @@ export default {
       title,
       gameData,
       sortList,
+      selectId: 0,
       filter : {
         name : "",
         players: {

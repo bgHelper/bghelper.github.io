@@ -27,10 +27,9 @@ def putInClass(item, cat, link):
 
 def update(dataBase, gameId):
     url = "https://www.boardgamegeek.com/xmlapi2/thing?stats=1&id=%d" % gameId
-    
     xml = requests.get(url)
     tree = ElementTree.fromstring(xml.content)
-
+    
     item = tree.find("item")
     id = item.attrib['id']    
     if not id in dataBase["list"]:
@@ -38,7 +37,7 @@ def update(dataBase, gameId):
     dataItem = dataBase["list"][id]
     dataItem["img"] = item.find("image").text
     if not "description" in dataItem:
-        dataItem["description"] = ""
+        dataItem["description"] = item.find("description").text
     for name in item.findall("name"):
         nameStr = name.attrib["value"]
         if name.attrib["type"] == "primary":
@@ -63,7 +62,7 @@ def update(dataBase, gameId):
     dataItem["family"] = []
     dataItem["mechanic"] = []
     if not "pages" in dataItem:
-        dataItem["pages"] = {}
+        dataItem["pages"] = []
     for link in item.findall("link"):
         if link.attrib["type"] == "boardgamecategory":
             putInClass(dataItem["category"], dataBase["category"], link)

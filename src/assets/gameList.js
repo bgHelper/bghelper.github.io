@@ -1,7 +1,6 @@
 const list = {
     "list": [
         {
-            "description": "",
             "en": "Chess of Qin Style",
             "zh": "秦棋攻略",
             "year": 2019,
@@ -11,16 +10,27 @@ const list = {
             "maxplaytime": 40,
             "minage": 6,
             "mechanic": [
-                "2046"
+                "区域移动"
             ],
             "rates": 8.08571,
             "weight": 3.0,
-            "ranks": {},
+            "ranks": [],
             "id": 289230,
-            "pages": {}
+            "description": "《秦棋攻略》是还原战国时代局部战场的抽象棋。玩家指挥各国的军队，通过排兵布阵，升级竞速，攻占对方底线所代表的城池来获得胜利。",
+            "pages": [
+                {
+                    "icon": "explore",
+                    "label": "规则",
+                    "to": "Rule"
+                },
+                {
+                    "icon": "table_restaurant",
+                    "label": "试玩",
+                    "to": "Play"
+                }
+            ]
         },
         {
-            "description": "",
             "en": "Palm Island",
             "zh": "棕榈岛",
             "year": 2018,
@@ -30,24 +40,30 @@ const list = {
             "maxplaytime": 15,
             "minage": 10,
             "mechanic": [
-                "2023",
-                "2664",
-                "2040",
-                "2047",
-                "2020",
-                "2819"
+                "合作游戏",
+                "资源构筑",
+                "手牌管理",
+                "记忆推理",
+                "同时行动",
+                "单人游戏"
             ],
-            "rates": 7.21466,
+            "rates": 7.21343,
             "weight": 1.7241,
-            "ranks": {
-                "1": 783,
-                "5499": 181
-            },
+            "ranks": [
+                {
+                    "val": 784,
+                    "label": "全部"
+                },
+                {
+                    "val": 181,
+                    "label": "家庭"
+                }
+            ],
             "id": 239464,
-            "pages": {}
+            "description": "《棕榈岛》是一款可以在任何地方玩的游戏，无论时间地点，甚至没有桌子都可以。玩家通过转换牌库中的17张牌，积攒资源，升级建筑，获得新能力，不断建设自己的岛屿并完成挑战。8回合之后，计算总的胜利点数。分为单人、合作、竞争三种模式。",
+            "pages": []
         },
         {
-            "description": "",
             "en": "Carcassonne",
             "year": 2000,
             "minplayers": 2,
@@ -56,22 +72,28 @@ const list = {
             "maxplaytime": 45,
             "minage": 7,
             "mechanic": [
-                "2080",
-                "2959",
-                "2002"
+                "区域控制",
+                "地图扩张",
+                "板块拼接"
             ],
-            "rates": 7.41898,
-            "weight": 1.9079,
+            "rates": 7.41912,
+            "weight": 1.9078,
             "zh": "卡卡城",
-            "ranks": {
-                "1": 184,
-                "5499": 36
-            },
+            "ranks": [
+                {
+                    "val": 184,
+                    "label": "全部"
+                },
+                {
+                    "val": 36,
+                    "label": "家庭"
+                }
+            ],
             "id": 822,
-            "pages": {}
+            "description": "Carcassonne is a tile-placement game in which the players draw and place a tile with a piece of southern French landscape on it. The tile might feature a city, a road, a cloister, grassland or some combination thereof, and it must be placed adjacent to tiles that have already been played, in such a way that cities are connected to cities, roads to roads, etcetera. Having placed a tile, the player can then decide to place one of their meeples on one of the areas on it: on the city as a knight, on the road as a robber, on a cloister as a monk, or on the grass as a farmer. When that area is complete, that meeple scores points for its owner.&#10;&#10;During a game of Carcassonne, players are faced with decisions like: &quot;Is it really worth putting my last meeple there?&quot; or &quot;Should I use this tile to expand my city, or should I place it near my opponent instead, giving him a hard time to complete their project and score points?&quot; Since players place only one tile and have the option to place one meeple on it, turns proceed quickly even if it is a game full of options and possibilities.&#10;&#10;First game in the Carcassonne series.&#10;&#10;",
+            "pages": []
         },
         {
-            "description": "",
             "en": "Gobblet",
             "zh": "棋迹连连",
             "year": 2000,
@@ -81,20 +103,26 @@ const list = {
             "maxplaytime": 20,
             "minage": 7,
             "mechanic": [
-                "2048",
-                "2060"
+                "模式构造",
+                "模式识别"
             ],
             "rates": 6.6001,
             "weight": 1.8487,
-            "ranks": {
-                "1": 2351,
-                "4666": 120
-            },
-            "pages": {},
+            "ranks": [
+                {
+                    "val": 2352,
+                    "label": "全部"
+                },
+                {
+                    "val": 121,
+                    "label": "抽象"
+                }
+            ],
+            "description": "Gobblet is an abstract game played on a 4x4 grid with each of the two players having twelve pieces that can nest on top of one another to create three stacks of four pieces.&#10;&#10;Your goal in Gobblet is to place four of your pieces in a horizontal, vertical or diagonal row. Your pieces start nested off the board. On a turn, you either play one exposed piece from your three off-the-board piles or move one piece on the board to any other spot on the board where it fits. A larger piece can cover any smaller piece. A piece being played from off the board may not cover an opponent's piece unless it's in a row where your opponent has three of his color.&#10;&#10;Your memory is tested as you try to remember which color one of your larger pieces is covering before you move it. As soon as a player has four like-colored pieces in a row, he wins &mdash; except in one case: If you lift your piece and reveal an opponent's piece that finishes a four-in-a-row, you don't immediately lose; you can't return the piece to its starting location, but if you can place it over one of the opponent's three other pieces in that row, the game continues.&#10;&#10;_______________&#10;Similiar to : &#10;&#10;     Cover Up&#10;&#10;&#10;&#10;&#10;",
+            "pages": [],
             "id": 2266
         },
         {
-            "description": "",
             "en": "Sprawlopolis",
             "zh": "无限都市",
             "year": 2018,
@@ -104,25 +132,34 @@ const list = {
             "maxplaytime": 20,
             "minage": 8,
             "mechanic": [
-                "2041",
-                "2023",
-                "2984",
-                "3001",
-                "2819",
-                "2002"
+                "卡牌选取",
+                "合作游戏",
+                "轮抽",
+                "叠放",
+                "单人游戏",
+                "板块拼接"
             ],
-            "rates": 7.46798,
-            "weight": 1.8467,
-            "ranks": {
-                "1": 400,
-                "5497": 260,
-                "5499": 67
-            },
-            "pages": {},
+            "rates": 7.46954,
+            "weight": 1.8477,
+            "ranks": [
+                {
+                    "val": 398,
+                    "label": "全部"
+                },
+                {
+                    "val": 259,
+                    "label": "策略"
+                },
+                {
+                    "val": 67,
+                    "label": "家庭"
+                }
+            ],
+            "description": "Jackhammers chattering, trucks beeping, engines roaring, the sounds of construction are everywhere. Sprawlopolis is growing and YOU are in charge of it all. The last team of planners couldn't cut it, so the city turned to your team, the best of the best. If anyone can turn this tiny town into a thriving civic center it's you.&#10;&#10;In Sprawlopolis, 1-4 players work together to build a new city from the ground up. Using only 18 cards and a variable scoring system, the game is never the same twice. Each turn, players will play 1 card from their hand to the growing city, trying to score as many points as possible. Players will have to communicate and plan without revealing their own cards in order to most efficiently develop large areas in each of the 4 zone types. Watch out though, the city hates paying for road maintenance so each road will cost you points in the end. When all cards have been placed, the game ends and players see if they have met dynamically generated minimum score for their game.  Can you meet the demands of the officials, work with your fellow planners and build the ultimate urban wonder?  It&rsquo;s time to find out!&#10;&#10;&mdash;description from the publisher&#10;&#10;&#10;Released in the June 2018 Board Game of the Month Club $20+ package.&#10;&#10;Non-US editions generally include four expansions: Construction Zones, Points of Interest, Wrecktar and Beaches, although the Frosted Games edition does not include the latest.&#10;&#10;",
+            "pages": [],
             "id": 251658
         },
         {
-            "description": "",
             "en": "Orchard: A 9 card solitaire game",
             "zh": "果园",
             "year": 2018,
@@ -132,22 +169,28 @@ const list = {
             "maxplaytime": 10,
             "minage": 8,
             "mechanic": [
-                "2981",
-                "2048",
-                "2819",
-                "2002"
+                "融合展开",
+                "模式构造",
+                "单人游戏",
+                "板块拼接"
             ],
-            "rates": 7.48216,
-            "weight": 1.1702,
-            "ranks": {
-                "1": 1096,
-                "4666": 32
-            },
-            "pages": {},
+            "rates": 7.47951,
+            "weight": 1.1667,
+            "ranks": [
+                {
+                    "val": 1097,
+                    "label": "全部"
+                },
+                {
+                    "val": 32,
+                    "label": "抽象"
+                }
+            ],
+            "description": "Orchard is a quick solitaire &quot;tile laying&quot; game that plays in under 10 minutes and that won the 2018 9-Card Nanogame Print and Play Design Contest. The aim of the game is to harvest fruit (score points) by playing cards so that their fruit trees overlap other trees already in the orchard that bear the same fruit. The more trees you can overlap, the more fruit you'll pick.&#10;&#10;In addition to the nine double-sided cards, you need 15 dice (of three colors) to keep track of your increasing harvest, and two cubes to represent &quot;rotten&quot; fruit. These allow you to lay a card that you wouldn't otherwise be able to &mdash; but come with a points penalty, so you must decide if and when to play them.&#10;&#10;",
+            "pages": [],
             "id": 245487
         },
         {
-            "description": "",
             "en": "Tiny Towns",
             "zh": "小小城镇",
             "year": 2019,
@@ -157,29 +200,35 @@ const list = {
             "maxplaytime": 60,
             "minage": 14,
             "mechanic": [
-                "2999",
-                "2875",
-                "2843",
-                "2978",
-                "2048",
-                "2685",
-                "2819",
-                "2828",
-                "2079",
-                "2015",
-                "2897"
+                "宾果",
+                "终局奖励",
+                "跟随行动",
+                "网格覆盖",
+                "模式构造",
+                "玩家出局",
+                "单人游戏",
+                "顺位：轮换",
+                "可变行动流程",
+                "可变玩家能力",
+                "可变初始化"
             ],
-            "rates": 7.33413,
+            "rates": 7.33433,
             "weight": 2.0807,
-            "ranks": {
-                "1": 325,
-                "5499": 62
-            },
-            "pages": {},
+            "ranks": [
+                {
+                    "val": 326,
+                    "label": "全部"
+                },
+                {
+                    "val": 62,
+                    "label": "家庭"
+                }
+            ],
+            "description": "You are the mayor of a tiny town in the forest in which the smaller creatures of the woods have created a civilization hidden away from predators. This new land is small and the resources are scarce, so you take what you can get and never say no to building materials. Cleverly plan and construct a thriving town, and don't let it fill up with wasted resources! Whoever builds the most prosperous tiny town wins!&#10;&#10;In Tiny Towns, your town is represented by a 4x4 grid on which you will place resource cubes in specific layouts to construct buildings. Each building scores victory points (VPs) in a unique way. When no player can place any more resources or construct any buildings, the game ends, and any squares without a building are worth -1 VP. The player with the most VP wins!&#10;&#10;-description from publisher&#10;&#10;",
+            "pages": [],
             "id": 265736
         },
         {
-            "description": "",
             "en": "Railroad Ink: Deep Blue Edition",
             "zh": "千墨交通",
             "year": 2018,
@@ -189,147 +238,102 @@ const list = {
             "maxplaytime": 30,
             "minage": 8,
             "mechanic": [
-                "2999",
-                "2883",
-                "2072",
-                "2039",
-                "2081",
-                "2055",
-                "2819"
+                "宾果",
+                "连接",
+                "投骰子",
+                "绘制直线",
+                "路径构造",
+                "纸笔游戏",
+                "单人游戏"
             ],
-            "rates": 7.25676,
+            "rates": 7.25631,
             "weight": 1.4726,
-            "ranks": {
-                "1": 463,
-                "5499": 93
-            },
-            "pages": {},
+            "ranks": [
+                {
+                    "val": 464,
+                    "label": "全部"
+                },
+                {
+                    "val": 93,
+                    "label": "家庭"
+                }
+            ],
+            "description": "In the multiplayer puzzle game Railroad Ink, your goal is to connect as many exits on your board as possible. Each round, a set of dice are rolled in the middle of the table, determining which kind of road and railway routes are available to all players. You have to draw these routes on your erasable boards to create transport lines and connect your exits, trying to optimize the available symbols better than your opponents.&#10;&#10;The more exits you connect, the more points you score at the end of the game, but you lose points for each incomplete route, so plan carefully! Will you press your luck and try to stretch your transportation network to the next exit, or will you play it safe and start a new, simpler to manage route?&#10;&#10;Railroad Ink comes in two versions, each one including two expansions with additional dice sets that add new special rules to your games. The Deep Blue Edition includes the Rivers and Lakes expansions. Increase the difficulty by adding the River route into the mix, or use the Lakes to connect your networks by ferry. These special rules can spice up things and make each game play and feel different. Each box allows you to play from 1 to 6 players, and if you combine more boxes, you can play with up to 12 players (or more). The only limit to the number of players is the number of boards you have!&#10;&#10;",
+            "pages": [],
             "id": 245654
+        },
+        {
+            "en": "Azul",
+            "zh": "花砖物语",
+            "year": 2017,
+            "minplayers": 2,
+            "maxplayers": 4,
+            "minplaytime": 30,
+            "maxplaytime": 45,
+            "minage": 8,
+            "mechanic": [
+                "终局奖励",
+                "模式构造",
+                "成套收集",
+                "板块拼接",
+                "顺位：行动获取"
+            ],
+            "rates": 7.80922,
+            "weight": 1.7594,
+            "ranks": [
+                {
+                    "val": 56,
+                    "label": "全部"
+                },
+                {
+                    "val": 1,
+                    "label": "抽象"
+                },
+                {
+                    "val": 6,
+                    "label": "家庭"
+                }
+            ],
+            "description": "Introduced by the Moors, azulejos (originally white and blue ceramic tiles) were fully embraced by the Portuguese when their king Manuel I, on a visit to the Alhambra palace in Southern Spain, was mesmerized by the stunning beauty of the Moorish decorative tiles. The king, awestruck by the interior beauty of the Alhambra, immediately ordered that his own palace in Portugal be decorated with similar wall tiles. As a tile-laying artist, you have been challenged to embellish the walls of the Royal Palace of Evora.&#10;&#10;In the game Azul, players take turns drafting colored tiles from suppliers to their player board. Later in the round, players score points based on how they've placed their tiles to decorate the palace. Extra points are scored for specific patterns and completing sets; wasted supplies harm the player's score. The player with the most points at the end of the game wins.&#10;&#10;",
+            "pages": [],
+            "id": 230802
         }
     ],
     "mechanic": [
-        {
-            "value": "2046",
-            "label": "区域移动"
-        },
-        {
-            "value": "2023",
-            "label": "合作游戏"
-        },
-        {
-            "value": "2664",
-            "label": "资源构筑"
-        },
-        {
-            "value": "2040",
-            "label": "手牌管理"
-        },
-        {
-            "value": "2047",
-            "label": "记忆推理"
-        },
-        {
-            "value": "2020",
-            "label": "同时行动"
-        },
-        {
-            "value": "2819",
-            "label": "单人游戏"
-        },
-        {
-            "value": "2080",
-            "label": "区域控制"
-        },
-        {
-            "value": "2959",
-            "label": "地图扩张"
-        },
-        {
-            "value": "2002",
-            "label": "板块拼接"
-        },
-        {
-            "value": "2048",
-            "label": "模式构造"
-        },
-        {
-            "value": "2060",
-            "label": "模式识别"
-        },
-        {
-            "value": "2041",
-            "label": "卡牌选取"
-        },
-        {
-            "value": "2984",
-            "label": "轮抽"
-        },
-        {
-            "value": "3001",
-            "label": "叠放"
-        },
-        {
-            "value": "2981",
-            "label": "融合展开"
-        },
-        {
-            "value": "2999",
-            "label": "赌博"
-        },
-        {
-            "value": "2875",
-            "label": "终局奖励"
-        },
-        {
-            "value": "2843",
-            "label": "跟随行动"
-        },
-        {
-            "value": "2978",
-            "label": "网格覆盖"
-        },
-        {
-            "value": "2685",
-            "label": "玩家出局"
-        },
-        {
-            "value": "2828",
-            "label": "顺位：轮换"
-        },
-        {
-            "value": "2079",
-            "label": "可变行动流程"
-        },
-        {
-            "value": "2015",
-            "label": "可变玩家能力"
-        },
-        {
-            "value": "2897",
-            "label": "可变初始化"
-        },
-        {
-            "value": "2883",
-            "label": "连接"
-        },
-        {
-            "value": "2072",
-            "label": "投骰子"
-        },
-        {
-            "value": "2039",
-            "label": "绘制直线"
-        },
-        {
-            "value": "2081",
-            "label": "路径构造"
-        },
-        {
-            "value": "2055",
-            "label": "纸笔游戏"
-        }
+        "区域移动",
+        "合作游戏",
+        "资源构筑",
+        "手牌管理",
+        "记忆推理",
+        "同时行动",
+        "单人游戏",
+        "区域控制",
+        "地图扩张",
+        "板块拼接",
+        "模式构造",
+        "模式识别",
+        "卡牌选取",
+        "轮抽",
+        "叠放",
+        "融合展开",
+        "宾果",
+        "终局奖励",
+        "跟随行动",
+        "网格覆盖",
+        "玩家出局",
+        "顺位：轮换",
+        "可变行动流程",
+        "可变玩家能力",
+        "可变初始化",
+        "连接",
+        "投骰子",
+        "绘制直线",
+        "路径构造",
+        "纸笔游戏",
+        "成套收集",
+        "顺位：行动获取"
     ],
-    "update": "2021.10.03"
+    "update": "2021.10.06"
 }
 
 export default list

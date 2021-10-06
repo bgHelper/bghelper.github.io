@@ -1,10 +1,10 @@
 <template>
-  <MainLayout hiddenLeft="true" hiddenRight="true">
-    <template v-slot:title>
+  <MainLayout :hiddenBack="true" :hiddenRightDrawer="true">
+    <template #title>
       {{title}} <span class= "text-caption"> {{version}} </span>
     </template>
     <q-page class="flex flex-center">      
-      <div class="fit row wrap justify-center q-gutter-md">
+      <div class="fit row wrap justify-evenly q-gutter-md">
         <IndexButton
           v-for="link in buttonData"
           :key="link.title"
@@ -29,7 +29,7 @@ const buttonData = [
   },
   {
     title: '大厅',
-    icon: 'table_restaurant',
+    icon: 'meeting_room',
     link: '/Hall'
   },
   /*

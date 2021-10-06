@@ -21,7 +21,7 @@ if not "mechanic" in dataBase:
 if not "ranks" in dataBase:
     dataBase["ranks"] = {} 
 
-idList = (289230,239464,822,2266,251658,245487,265736,245654)
+idList = (289230,239464,822,2266,251658,245487,265736,245654,230802)
 
 for id in idList:
     update.update(dataBase, id)
