@@ -186,7 +186,7 @@ const list = {
                     "label": "抽象"
                 }
             ],
-            "description": "Orchard is a quick solitaire &quot;tile laying&quot; game that plays in under 10 minutes and that won the 2018 9-Card Nanogame Print and Play Design Contest. The aim of the game is to harvest fruit (score points) by playing cards so that their fruit trees overlap other trees already in the orchard that bear the same fruit. The more trees you can overlap, the more fruit you'll pick.&#10;&#10;In addition to the nine double-sided cards, you need 15 dice (of three colors) to keep track of your increasing harvest, and two cubes to represent &quot;rotten&quot; fruit. These allow you to lay a card that you wouldn't otherwise be able to &mdash; but come with a points penalty, so you must decide if and when to play them.&#10;&#10;",
+            "description": "《果园》是一款单人板块拼接游戏，每局时间约10分钟。该游戏于2018年获得9卡PNP小游戏设计奖。游戏目的是通过叠放相同的果树，来收获尽可能多的水果（即分数）。",
             "pages": [],
             "id": 245487
         },
