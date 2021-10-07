@@ -224,7 +224,7 @@ const list = {
                     "label": "家庭"
                 }
             ],
-            "description": "You are the mayor of a tiny town in the forest in which the smaller creatures of the woods have created a civilization hidden away from predators. This new land is small and the resources are scarce, so you take what you can get and never say no to building materials. Cleverly plan and construct a thriving town, and don't let it fill up with wasted resources! Whoever builds the most prosperous tiny town wins!&#10;&#10;In Tiny Towns, your town is represented by a 4x4 grid on which you will place resource cubes in specific layouts to construct buildings. Each building scores victory points (VPs) in a unique way. When no player can place any more resources or construct any buildings, the game ends, and any squares without a building are worth -1 VP. The player with the most VP wins!&#10;&#10;-description from publisher&#10;&#10;",
+            "description": "《小小城镇》中，玩家扮演统领森林中小生物建造城镇的市长。新地点资源贫乏，故此玩家无法拒绝任何建造材料。认真规划并仔细建设，并避免被无用资源填满。",
             "pages": [],
             "id": 265736
         },
